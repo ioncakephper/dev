@@ -1,0 +1,6 @@
+sidebars:
+  - label: Getting started
+    slug: getting-started
+    items:
+      - Installation
+      - Quick start

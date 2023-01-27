@@ -1,0 +1,27 @@
+sidebars:
+    - label: gitlab docs
+      folder: ee
+      items:
+        - GitLab Docs
+        - label: Learn GitLab with Tutorials
+          slug: tutorials
+          headings:
+            - Find your way around GitLab
+            - Use Git
+            - Plan your work in projects
+        - label: Choose a subscription
+          folder: subscriptions
+          items:
+            - label: Choose a subscription
+              title: GitLab subscription
+              slug: index
+              headings:
+                - Choose a GitLab subscription:
+                    - Choose between GitLab SaaS or GitLab self-managed
+                    - Choose a GitLab tier
+                - Find your subscription
+            - label: GitLab SaaS subscriptions
+              slug: gitlab_com
+            - Self-managed subscriptions
+            - GitLab Dedicated subscriptions
+

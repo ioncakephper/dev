@@ -1,0 +1,5 @@
+sidebars:
+    - Microsoft Teams:
+        - Getting started
+        - Standard:
+            '@title': Another title for Standard

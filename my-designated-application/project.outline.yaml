@@ -1,0 +1,68 @@
+# Innovation Studio Documentation Outline
+sidebars:
+    - tutorials:
+        '@folder': innovation-studio/tutorials
+        '@items':
+            - Tutorials:
+                '@slug': index
+                '@brief': Tutorials show you how to accomplish several tasks, giving you detailed information, hints, and alternatives.
+            - Create Business Entity with Several Attributes
+            - Create OneToMany Relationships
+            - 'Create a Form-Driven Flow'
+    - docs:
+        '@folder': innovation-studio/developer
+        '@items':
+            - Innovation Studio:
+                '@slug': intro
+            - Evolutive Data Core:
+                - Evolutive Data Core:
+                    '@title': Evolutive Data Core Overview
+                    '@brief': FintechOS Evolutive Data Core streamlines relationships between data models and keeps the underlying data structures updated. Just add attributes and relationships between models and Data Core updates the tables and related fields.
+                - Data Model Designer
+                - Data Model Explorer
+                - Data Import Templates
+                - Data Governance
+                - Data Pipes
+            - Digital Experience:
+                - Digital Experience:
+                      '@note': Give a quick overview of Digital Experience. Briefly explain the benefits of Digital Experience items
+                - Customer Journeys:
+                    - Digital Journeys
+                    - 'Form Driven Flows'
+                    - Custom Flows
+                    - Digital Flow Processing
+                    - Custom UI
+                    - Code Execution Sequence
+                    - Digital Journey Context
+                    - UI Designer:
+                        - UI Designer
+                        - Define the Form Layout
+                        - Add Attributes
+                        - Configure and Add Relations
+                        - Work with Buttons
+                        - Access Predefined HTML Templates
+                        - Add Entity Extension Child Collection Support
+                    - 'Built-in Analytics'
+                    - Code Snippets Support
+
+                - Digital FrontEnds:
+                    - Dashboards:
+                        '@headings':
+                            - Overview
+                            - Manage Dashboards:
+                                - Create Dashboard
+                                - Edit Dashboard Properties
+                                - Delete Dashboard
+                            - Manage Dashboard Content:
+                                - Add Widget to Dashboard
+                                - Edit Dashboard Widget Properties
+                                - Delete Dashboard Widget
+                    - Widgets
+                    - Menu Items
+                    - Custom Themes
+                    - Portal Profiles
+                    - Anonymous FrontEnds
+                    - Digital Experience Portals
+            - Automation Blocks
+            - "Hyper-personalization Automation"
+            - App Data Forms

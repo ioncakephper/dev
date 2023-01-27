@@ -1,0 +1,27 @@
+sidebars:
+  - 
+    label: docs
+    folder: category
+    items:
+        - Gitlab docs
+        - Choose a subscription:
+          - GitLab SaaS subcription
+          - GitLab self-managed subscription
+          - GitLab Dedicated
+
+  - label: release notes
+    folder: release-notes
+    items:
+      - Latest:
+          - label: December 2022
+            title: December 2022 release notes
+          - November 2022
+          - October 2022
+      - 2021 Release notes:
+          - December 2021
+          - label: January 2021
+            excerpt: Here is the summary for this page.
+            headings:
+              - Overview
+              - Workbench
+              - Interface

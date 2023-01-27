@@ -1,0 +1,57 @@
+
+[
+    {
+        "API": [
+            {
+                "Classes": [
+                    "Overview",
+                    {{#each classes as |item|}}{{#with item}}
+                    {
+                        "{{{name}}}": [
+                            {
+                                "Overview": {
+                                    "@slug": "{{{name}}} overview",
+                                    "@headings": [
+                                        {
+                                            "Methods": {
+                                                "@note": "Class methods summary with name and description for each method. The method name links to method page."
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {{#if methods}}
+                            {
+                                "Methods": [
+                                {{#each methods as |item|}}{{#with item}}
+                                    {
+                                        "{{{name}}}": {
+                                            "@title": "Method {{{name}}}",
+                                            "@brief": "{{{description}}}",
+                                            "@headings": [
+                                                "Synopsis",
+                                                "Parameters",
+                                                "Returns",
+                                                "Examples"
+                                            ]
+                                        }
+                                    },
+                                    {{/with}}
+    
+                                {{/each}}
+                                ]
+                            }
+                            {{/if}}
+                        ]
+                    }
+                        {{/with}}
+                        
+                    {{/each}}
+                ]
+            },
+            {
+                "Functions": null
+            }
+        ]
+    }
+]

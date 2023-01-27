@@ -1,0 +1,47 @@
+@containerWidth: 1140px;
+@containerWidthFluid: (120px * 12);
+@cols12: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+@colMargin: 10px;
+@colPadding: 10px;
+
+.container {
+    margin: 0 auto;
+    width: @containerWidth;
+}
+
+.container-fluid {
+    margin: 0 auto;
+    width: @containerWidthFluid;
+}
+
+.colPadding() {
+    margin: 0 @colMargin;
+    padding: 0 @colPadding;
+}
+
+header {
+    background-color: lightblue;
+    padding: 2rem 0;
+    min-height: 20rem;
+
+}
+
+each(@cols12, {
+    .container .row {
+        .col-md-@{value} {
+            .colPadding();
+            float: left;
+            width: (@containerWidth / length(@cols12) * @value - 2 * 10px - 2 * 10px);
+        }
+    }
+
+    .container-fluid .row {
+        .col-md-@{value} {
+            .colPadding();
+            width: (@containerWidthFluid / length(@cols12) * @value);
+        }
+    }
+})
+
+
+

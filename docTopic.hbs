@@ -1,0 +1,10 @@
+# {{{title}}}
+
+{{{description}}}
+
+{{#each headings as |heading|}}
+## `{{{heading.label}}}(): {{#if heading.returnType}}{{{heading.returnType}}}{{else}}void{{/if}}`
+
+{{{heading.description}}}
+
+{{/each}}

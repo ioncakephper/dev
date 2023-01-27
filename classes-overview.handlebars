@@ -1,0 +1,75 @@
+<h1>Classes summary</h1>
+
+Brief list of classes:
+
+<dl>
+    {{#each classes as |item|}}{{#with item}}
+    <dt><a href="#" title="View {{{name}}} documentation"><code>{{{name}}}</code></a></dt>
+    <dd>{{{description}}}</dd>{{/with}} {{/each}}
+</dl>
+
+{{#each classes as |item|}}{{#with item}}
+<h1>Class {{{name}}}</h1>
+
+{{{description}}}
+
+{{#if extends}}
+<h2>Extends</h2>
+
+<code>{{{extends}}}</code>
+{{/if}}
+
+{{#if descendants}}
+<h2>Descendants</h2>
+
+{{#each descendants as |item|}}{{#with item}}
+   <code>{{{name}}}</code>
+{{/with}}
+    
+{{/each}}
+{{/if}}
+
+<h2>Constructor</h2>
+
+<h3 class="method-prototype">new {{{name}}}(options?: any)</h3>
+
+<h4>Parameters</h4>
+
+<dl>
+    <dt>options</dt>
+    <dd><p><strong>Type:</strong> any</p><p><strong>Description:</strong> Paramter description goes here...</p></dd>
+</dl>
+
+<h2>Methods</h2>
+
+{{#each methods as |item|}}{{#with item}}
+   
+<h3 class="method-prototype">{{{name}}}(options?: any){{#if returns.type}}
+ => <code>String</code>   
+{{/if}}</h3>
+
+{{{description}}}
+
+<h4>Parameters</h4>
+
+<dl>
+    <dt><code>options</code></dt>
+    <dd><p><strong>Type:</strong> any</p><p><strong>Description:</strong> Paramter description goes here...</p></dd>
+</dl>
+
+{{#if returns}}
+<h4>Returns</h4>
+
+{{{returns.description}}}
+
+<ul>
+    <li><code>{{{returns.type}}}</code></li>
+</ul>  
+{{/if}}
+
+
+{{/with}}
+    
+{{/each}}
+
+{{/with}} {{/each}}

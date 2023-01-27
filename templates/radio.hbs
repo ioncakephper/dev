@@ -1,0 +1,8 @@
+<label for="{{{name}}}" id="{{{name}}}-label">{{{label}}}:{{#if required}}<span class="required-field">*</span>{{/if}}</label>
+{{#each labelValues as |labelValue|}}
+<div class="form-check">
+  <label class="form-check-label">
+    <input type="radio" class="form-check-input{{#if ../class}} {{{../class}}}{{/if}}" name="{{{../name}}}"{{#if labelValue.checked}} checked{{/if}}{{#if labelValue.value}} value="{{{labelValue.value}}}"{{/if}} >{{{labelValue.label}}}
+  </label>
+</div>
+{{/each}}

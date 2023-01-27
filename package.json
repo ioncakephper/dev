@@ -1,0 +1,36 @@
+{
+  "name": "dev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.2.2",
+    "beautify": "^0.0.8",
+    "bootstrap": "^5.2.3",
+    "camel-case": "^4.1.2",
+    "colors": "^1.4.0",
+    "commander": "^9.4.1",
+    "file-easy": "^1.0.3",
+    "format": "^0.2.2",
+    "hbsr": "^1.0.7",
+    "jsdoc3-parser": "^2.0.0",
+    "lodash": "^4.17.21",
+    "markdown": "^0.5.0",
+    "markdown-it": "^13.0.1",
+    "mongodb": "^4.11.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.19",
+    "onfido-sdk-ui": "^6.15.5",
+    "shelljs": "^0.8.5",
+    "yaml": "^2.1.3",
+    "yaml-js": "^0.3.1"
+  },
+  "devDependencies": {
+    "rewire": "^6.0.0"
+  }
+}

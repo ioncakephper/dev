@@ -1,0 +1,26 @@
+sidebars:
+  - label: alternative
+    autoFolder: true
+    folder: eu
+    items:
+      - label: GitLab Demo
+        slug: index
+      - label: Learn GitLab with tutorials
+        slug: tutorials
+        headings:
+          - Find your way around GitLab
+          - Use Git
+          - Plan your work in projects
+      - label: Choose a subscription
+        folder: subscription
+        items:
+          - title: GitLab Subscription
+            label: Choose a subscription
+            slug: index
+            headings:
+              - Choose a GitLab subscription:
+                  - Choose between
+                  - Choose a GitLab tier
+          - GitLab SaaS subscription
+
+

@@ -1,0 +1,44 @@
+sidebars:
+ - label: GitLab Docs
+   slug: gitlab-docs
+   items:
+        - GitLab Docs
+        - label: GitLab Tutorials
+          slug: tutorials
+        - label: Choose a subscription
+          folder: subscription
+          items:
+              - label: GitLab SaaS Subscriptions
+                slug: gitlab_com
+                title: GitLab SaaS Subscription
+                
+              - label: Self-manage subscriptions
+                slug: self_manage
+                title: GitLab self-managed subscription
+              
+        - label: Install GitLab
+          folder: install
+          items:
+              - label: Requirements
+                items:
+                    - label: PostgreSql extensions
+                      title: Managing PostgreSQL extensions
+                    - Installation Methods:
+                        - Linux package (Omnibus):
+                            - Architecture
+                            - Installation
+                            - Configure
+                            - Release process
+                            - Maintain
+                            - Troubleshooting
+                        - Helm chart:
+                            - Install:
+                                - label: Installing GitLab by using Helm
+                                  slug: index
+                            - Configure
+                            - Upgrade
+                            - Backup and Restore
+                            - Migrate from Omnibus
+                            - Uninstall
+                            - Troubleshooting
+             

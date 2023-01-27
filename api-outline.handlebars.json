@@ -1,0 +1,17 @@
+{
+    "classes": [
+        {
+            "name": "UiBooleanField",
+            "methods": [
+                {
+                    "name": "getTemplateFilename",
+                    "description": "Lorem ipsum dolores dolor erat sit dolores at gubergren. Sed dolor no ut diam dolor, dolor est justo diam sit."
+                },
+                {
+                    "name": "getTemplateString",
+                    "description": "Lorem ipsum dolores dolor erat sit dolores at gubergren. Sed dolor no ut diam dolor, dolor est justo diam sit."
+                }
+            ]
+        }
+    ]
+}

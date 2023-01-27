@@ -1,0 +1,40 @@
+# Innovation Studio Documentation Outline
+default:
+    title: 'Innovation Studio'
+    folder: innovation studio
+    template: full-width
+sidebars:
+    - docs:
+        '@folder': innovation-studio/developer
+        '@items':
+            - Evolutive Data Core:
+                - Data Model Designer
+                - Data Model Explorer
+                - Data Import Templates
+                - Data Governance
+                - Data Pipes
+            - Digital Experience:
+                - Digital Experience:
+                      '@note': Give a quick overview of Digital Experience. Briefly explain the benefits of Digital Experience items
+                - Customer Journeys
+                - Digital FrontEnds:
+                    - Dashboards:
+                        '@headings':
+                            - Overview
+                            - Manage Dashboards:
+                                - Create Dashboard
+                                - Edit Dashboard Properties
+                                - Delete Dashboard
+                            - Manage Dashboard Content:
+                                - Add Widget to Dashboard
+                                - Edit Dashboard Widget Properties
+                                - Delete Dashboard Widget
+                    - Widgets
+                    - Menu Items
+                    - Custom Themes
+                    - Portal Profiles
+                    - Anonymous FrontEnds
+                    - Digital Experience Portals
+            - Automation Blocks
+            - "Hyper-personalization Automation"
+            - App Data Forms

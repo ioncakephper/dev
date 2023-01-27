@@ -1,0 +1,28 @@
+{
+    "classes": [
+        {
+            "name": "UiBooleanField",
+            "extends": "UiTextField",
+            "descendants": [
+                {
+                    "name": "UiCustomSwitch"
+                }
+            ],
+            "description": "Lorem ea lorem rebum lorem erat sit duo. Justo sit et aliquyam gubergren magna. Eirmod rebum amet magna invidunt aliquyam.",
+            "methods": [
+                {
+                    "name": "getTemplateFilename",
+                    "description": "Lorem ipsum dolores dolor erat sit dolores at gubergren. Sed dolor no ut diam dolor, dolor est justo diam sit.",
+                    "returns": {
+                        "type": "String",
+                        "description": "Et sed sanctus clita diam ipsum, dolores sadipscing kasd sit lorem, ut sea magna et duo est ipsum ea et.."
+                    }
+                },
+                {
+                    "name": "getTemplateString",
+                    "description": "Lorem ipsum dolores dolor erat sit dolores at gubergren. Sed dolor no ut diam dolor, dolor est justo diam sit."
+                }
+            ]
+        }
+    ]
+}

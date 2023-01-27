@@ -1,0 +1,5 @@
+<label for="{{{name}}}" id="{{{name}}}-label">{{{label}}}:{{#if required}}<span class="required-field">*</span>{{/if}}</label><select class="form-control" name="{{{name}}}" id="{{{name}}}"{{#if multiple}} multiple size="{{#if size}}{{{size}}}{{else}}5{{/if}}"{{/if}}>
+    {{#each labelValues as |labelValue|}}
+    <option{{#if labelValue.value}} value="{{{labelValue.value}}}"{{/if}}{{#if labelValue.checked}} selected{{/if}}>{{{labelValue.label}}}</option>
+    {{/each}}
+</select>

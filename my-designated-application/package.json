@@ -1,0 +1,8 @@
+{
+  "name": "my-designated-application",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "react": "^5.1.1"
+  }
+}

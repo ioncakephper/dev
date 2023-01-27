@@ -1,0 +1,29 @@
+{
+    type: "category",
+    label: "API",
+    items: [
+        {
+            type: "category",
+            label: "Classes",
+            items: [
+                'classes-overview',
+                {{#each classes as |item|}}{{#with item}}            
+                {
+                    type: "category",
+                    label: "{{{name}}}",
+                    items: [
+                        "{{{name}}}-class-overview",
+                        {{#each methods as |item|}}{{#with item}}
+                        "{{{../name}}}-{{{name}}}",{{/with}}{{/each}}
+                    ]
+                },
+                {{/with}}{{/each}}
+            ]
+        },
+        {
+            type: "category",
+            label: "Functions",
+            items: []
+        }
+    ]
+}

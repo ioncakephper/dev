@@ -1,0 +1,19 @@
+<label for="{{{name}}}" id="{{{name}}}-label">{{{label}}}:{{#if required}}<span class="required-field">*</span>{{/if}}</label>
+<table class="table table-striped table-hover table-sm" name="{{{name}}}" id="{{{name}}}">
+    <thead>
+        <tr>
+            {{#each headers as |header|}}
+            <th>{{{header}}}</th>
+            {{/each}}
+        </tr>
+    </thead>
+    <tbody>
+        {{#each dataRows as |row|}}
+        <tr>
+            {{#each row as |cell|}}
+            <td>{{{cell}}}</td>
+            {{/each}}
+        </tr>
+        {{/each}}
+    </tbody>
+</table>

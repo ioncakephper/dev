@@ -1,0 +1,10 @@
+sidebars:
+  - label: Studio
+    items:
+      - Getting started:
+          - Installation
+      - '??import = ftos/Evolutive Data Core'
+
+  - label: Evolutive Data Core
+    items:
+        - Overview

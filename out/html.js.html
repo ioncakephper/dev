@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: html.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: html.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * @module BasicHtmlTag
+ */
+
+const { isEmpty, isArray, isString, isObject } = require("lodash")
+const { expects } = require("./dbc")
+const path = require('path');
+
+/**
+ * Creates a tag with the given tagName and content.       
+ * @param {string} tagName - the name of the tag to create.       
+ * @param {string | Array&lt;string>} content - the content of the tag.       
+ * @param {Object} options - the options for the tag.       
+ * @returns {string} the tag.       
+ */
+function tag(tagName, content = '', options = {}) {
+    if (isEmpty(content)) {
+        return shortTag(tagName, options)
+    }
+    if (isArray(content)) {
+        return tag(tagName, content.join(''), options)
+    }
+    return `${tagStart(tagName, options)}>${content}&lt;/${tagName}>`
+}
+
+/**
+ * Creates a short tag with the given tag name and options.       
+ * @param {string} tagName - the name of the tag to create       
+ * @param {object} [options={}] - the options to pass to the tag       
+ * @returns {string} the short tag       
+ */
+function shortTag(tagName, options = {}) {
+    return `${tagStart(tagName, options)} />`
+}
+
+/**
+ * Returns the start of a tag with the given tag name and attributes.       
+ * @param {string} tagName - the name of the tag.       
+ * @param {object} [options={}] - the attributes of the tag.       
+ * @returns {string} the start of the tag.       
+ */
+function tagStart(tagName, options = {}) {
+    return `&lt;${tagName} ${tagAttributes(options)}`.trim()
+}
+
+/**
+ * Takes in an object of attributes and returns a string of attributes.           
+ * @param {object} options - the object of attributes to format.           
+ * @returns {string} - the string of attributes.           
+ */
+function tagAttributes(options = {}) {
+    let parts = Object.keys(options).map(attr => {
+        let value = options[attr];
+        return `${attr}="${value}"`
+    })
+    return parts.join(' ')
+}
+
+/**
+ * Creates a table element.       
+ * @param {string} thead - the table header       
+ * @param {string} tbody - the table body       
+ * @param {object} options - the options for the table       
+ * @returns {string} the table element       
+ */
+function table(thead = '', tbody = '', options = {}) {
+    return tag('table', [thead, tbody], options)
+}
+
+/**
+ * Creates a block of HTML with a title and a list of items.           
+ * @param {string} title - the title of the block.           
+ * @param {string[]} items - the items to put in the block.           
+ * @param {object} [options={}] - the options for the block.           
+ * @param {string} [options.h2] - the options for the h2 tag.           
+ * @param {string} [options.div] - the options for the div tag.           
+ * @returns {string} the HTML string for the block.           
+ */
+function block(title, items = [], options = {}) {
+    return tag('div',
+        [
+            tag('h2', title, options['h2']),
+            tag('ol', items.map(item => tag('li', item)))
+        ],
+        options['div']
+    )
+}
+
+/**
+ * Creates an anchor tag with the given title and url.       
+ * @param {string} title - the title of the anchor tag.       
+ * @param {string | Array.&lt;string> | Object} url - the url of the anchor tag.       
+ * @param {object} [options={}] - the options of the anchor tag.       
+ * @returns {string} the anchor tag.       
+ */
+function alink(title, url, options = {}) {
+    expects({
+        title: isString(title),
+        url: isString(url),
+        options: isObject(options),
+    })
+    return tag('a', title, {...options, ...{href: url(url)}})
+}
+
+/**
+ * Returns the URL of the current page.           
+ * @param {string | string[] | object} context - The context to use when generating the URL.           
+ * @returns {string} The URL of the current page.           
+ */
+function url(context) {
+    if (isArray(context)) {
+        let [controller, action, params] = context;
+
+        let queryString;
+        if (isObject(params)) {
+            queryString = Object.keys(params).map(k => {
+                return `${k}=${params[k]}`
+            }).join('&amp;')
+        }
+        if (isArray(params)) {
+            queryString = params.join('&amp;')
+        }
+        if (isString(params)) {
+            queryString = params;
+        }
+        if (!isEmpty(queryString)) {
+            queryString = `?${queryString}`
+        }
+        return path.join(controller, action, queryString)
+    }
+    if (isObject(context)) {
+        let {controller, action, params} = context;
+        return url([controller, action, params])
+    }
+    if (isString(context)) {
+        return context;
+    }
+    return context;
+}
+
+module.exports = {
+    alink,
+    block,
+    shortTag,
+    table,
+    tag,
+    tagAttributes,
+    tagStart,
+    url,
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-BasicHtmlTag.html">BasicHtmlTag</a></li><li><a href="module-DesignByContract.html">DesignByContract</a></li><li><a href="module-EntityManagement.html">EntityManagement</a></li><li><a href="module-EntityManagementHelper.html">EntityManagementHelper</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.11</a> on Wed Nov 16 2022 14:14:25 GMT+0200 (Eastern European Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
