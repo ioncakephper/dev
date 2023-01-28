@@ -13,7 +13,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\api-generator.js"
+            "program": "${workspaceFolder}\\combine.js"
         }
     ]
 }

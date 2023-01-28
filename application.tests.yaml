@@ -1,0 +1,10 @@
+
+description: DB tests
+
+tests:
+  - query:
+      - empty records
+  - execute:
+      - accepts empty lines:
+          - spaces and tabs
+          - several lines separated by new line carriage return

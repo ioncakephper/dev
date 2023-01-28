@@ -1,0 +1,10 @@
+
+{{#if items}}
+describe("{{{label}}}", function() {
+    {{{items}}}
+})
+{{else}}
+it("{{{label}}}", function() {
+    
+})
+{{/if}}
