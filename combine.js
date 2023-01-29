@@ -10,7 +10,8 @@ function combineWords(s1, s2) {
     s1 = s1.trim();
     s2 = s2.trim();
 
-    let q = [s1, s2].sort().shift();
+    // let q = [s1, s2].sort().shift();
+    let q = `${s1}${s2}`
     let items = [];
 
     const getCommonLetters = (source, s1, s2) => {
@@ -39,18 +40,20 @@ function combineWords(s1, s2) {
         let r = new RegExp(`(${letter})`, 'g');
 
         // get letter frequency in each strings
-        let freq = [s1, s2].map(s => {
+        let f = [s1, s2].map(s => {
             return s.match(r).length;
         })
 
         // then get only those number of letter occurrences less than previous length
-        .filter(sl => {
-            if (lastLength < 0)
-                 return true;
+        f = f.filter(sl => {
+            if (lastLength < 0) {
+                let m = (f[0] > f[1]) ? f[0] : f[1];
+                return sl === m;
+            }
             return sl === lastLength - 1;
         })
         // get the first result from the resulting array
-        [0]
+        let freq = f[0]
 
         // ignore letters where feasible number not found.
         if (!freq)
@@ -74,9 +77,12 @@ function combineWords(s1, s2) {
     }).join("")
 }
 
-let r = combineWords("teste", "teae");
+// let r = combineWords("teste", "teae");
+r = combineWords("bab", "aab")
 // let r = combineWords("emailGooglecom",
 // "ponicodecom");
+
+console.log(r)
 
 module.exports = {
     combineWords,
