@@ -2,10 +2,19 @@
 let output = commonLetters('teste', 'teae');
 console.log(output)
 
+function f(s1) {
+    let items = [];
+
+    if (s1) {
+    //     if (s1 > 5) {
+    //         return 9;
+    //     }
+        a = 5
+    }
+    return 5;
+}
 
 function commonLetters(s1, s2) {
-
-    
     let items = [];
     let q = [s1, s2].sort().pop();
 
